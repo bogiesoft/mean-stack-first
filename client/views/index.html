@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--we use ng app declaaration to tell angular it's an angular application-->
+<html ng-app="meetupApp">
+<head>
+	<title>Meetups</title>
+</head>
+<body>
+
+	<!--This is our meetups view-->
+	<div ng-controller="meetupsController">
+		<h1>There are {{meetups.length}} number of meetups </h1>
+		<ul>
+			<li ng-repeat="meetup in meetups">
+				{{meetup.name}}
+			</li>
+		</ul>
+		<form ng-submit="createMeetup()">
+			<input type="text" placeholder="meet up name" ng-model="meetupName"/>
+			<button type="submit">Add New Meetups</button>
+		</form>
+	</div>
+	<script type"text/javascript" src="https://code.angularjs.org/1.2.8/angular.js"></script>.
+	<script type"text/javascript" src="https://code.angularjs.org/1.2.8/angular-resource.js"></script>
+	<script type"text/javascript" src="/js/app.js"></script>
+	<script type="text/javascript" src="/js/controllers/meetups-controller.js"></script>
+</body>
+</html>
